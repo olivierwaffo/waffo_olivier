@@ -1,21 +1,44 @@
+/* met en majuscule tout le texte */
+span.uppercase {
+  text-transform: uppercase;
+}
+/* met en minuscule tout le texte */
+span.lowercase {
+  text-transform: lowercase;
+}
+/* chaque lettre de mot mis en majuscule */
+span.capitalize {
+  text-transform: capitalize;
+}
 .div-center {
   margin: auto;
   width: 30%;
   border: 3px solid #990000;
   padding: 30px;
 }
-.align {
-  text-align: center;
+.main-title-center {
+  margin: auto;
+  display: table;
+  align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 20px;
 }
-.gras {
+span.text-title {
+  font-size: 20px;
   font-weight: bold;
 }
-.text-size {
-  font-size: 20px;
+span.text {
+  font-size: 16px;
 }
-.clearfix {
-  overflow: auto;
+/*"clearfix" permet de saisir un text autour d'une image
+Exple: Ecrire un text avec une image d'illustration sur la gauche ou la droite*/
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
+
 img {
   float: right;
 }
