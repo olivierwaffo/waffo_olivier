@@ -10,10 +10,16 @@ span.lowercase {
 span.capitalize {
   text-transform: capitalize;
 }
-.div-center {
+.div-present {
   margin: auto;
-  width: 30%;
+  width: 40%;
   border: 3px solid #990000;
+  padding: 30px;
+}
+.div-qcm {
+  margin: auto;
+  width: 50%;
+  border: 3px solid #3633ff;
   padding: 30px;
 }
 .main-title-center {
@@ -21,12 +27,22 @@ span.capitalize {
   display: table;
   align: center;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   padding: 20px;
+}
+.marg-top {
+  margin-top: 25px;
+}
+p.text-title {
+  font-size: 15px;
+  font-weight: bold;
 }
 span.text-title {
   font-size: 20px;
   font-weight: bold;
+}
+p.text {
+  font-size: 12px;
 }
 span.text {
   font-size: 16px;
