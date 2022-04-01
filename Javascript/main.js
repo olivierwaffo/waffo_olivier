@@ -1,17 +1,19 @@
 const element1 = document.getElementById("bamako");
-let element2 = document.getElementById("yaounde");
-let element3 = document.getElementById("abidjan");
+const element2 = document.getElementById("yaounde");
+const element3 = document.getElementById("abidjan");
 
 element1.addEventListener("click", myFunctionRep1);
-window.onload = function myFunctionRep1() {
+function myFunctionRep1() {
   document.getElementById("response").innerHTML = "Faux";
 }
+
 element2.addEventListener("click", myFunctionRep2);
-window.onload = function myFunctionRep2() {
+function myFunctionRep2() {
   document.getElementById("response").innerHTML = "Vrai";
 }
+
 element3.addEventListener("click", myFunctionRep3);
-window.onload = function myFunctionRep3() {
+function myFunctionRep3() {
   document.getElementById("response").innerHTML = "Faux";
 }
 
@@ -46,4 +48,4 @@ function ifcondition() {
     console.log("Mettre seulemnt un Tee-shirt");
   }
 }
-ifcondition();
+//ifcondition();
