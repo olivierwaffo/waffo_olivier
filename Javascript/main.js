@@ -1,3 +1,5 @@
+/* Début Question_1
+Click sur les differentes réponses déclenchement de la fonction Vrai ou Faux correspondante*/
 document.getElementById("bamako").onclick = function () {
   falseFunction();
 };
@@ -8,39 +10,48 @@ document.getElementById("abidjan").onclick = function () {
   falseFunction();
 };
 
+/*Affichage de la réponse en fonction du choix de radio button*/
 function falseFunction() {
+  document.getElementById("respContainerQ1").style.backgroundColor = "red";
   document.getElementById("responseQ1").innerHTML = "Faux";
 }
 
 function trueFunction() {
+  document.getElementById("respContainerQ1").style.backgroundColor = "green";
   document.getElementById("responseQ1").innerHTML = "Vrai";
 }
 
-/*document.getElementById("abidjan").addEventListener("click", myFunctionRep3);
-function myFunctionRep3() {
-  document.getElementById("response").innerHTML = "Faux";
-}*/
+/* Debut Question2
+valaidate() collecte et compte l'ensemble des valeurs d'input à true et false.
+Il fait une boucle et effectue une ajout ou un retrait en fonction du checkbox à true ou à false*/
 
 document.getElementById("response").onclick = validate;
 function validate() {
-  var checkboxes = document.getElementsByName("true");
+  var checkboxes = document.getElementsByName("input");
   var checkboxChecked = [];
 
   for (var i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked && checkboxes[i].value === "true") {
       checkboxChecked.push(checkboxes[i]);
-    } else if (checkboxes[i].checked && checkboxes[i].value === "false") {
-      checkboxChecked.length - 1;
+    }else if (checkboxes[i].checked && checkboxes[i].value === "false") {
+      checkboxChecked.pop();
     }
   }
-  console.log("taille : " + checkboxChecked.length);
-  if (checkboxChecked.length === 2) {
-    document.getElementById("responseQ2").innerHTML = "Vrai";
-  } else {
-    document.getElementById("responseQ2").innerHTML = "Faux";
-  }
+
+/* cette condition affiche la réponse en fonction du  quota de checkbox atteint ou pas */
+if(checkboxChecked.length === 2){
+  document.getElementById("responseQ2").innerHTML = "Vrai";
+  document.getElementById("respContainerQ2").style.backgroundColor = "green";
+} else{
+  document.getElementById("responseQ2").innerHTML = "Faux";
+  document.getElementById("respContainerQ2").style.backgroundColor = "red";
 }
 
+}
+
+
+
+/*affiche les differentes déclarations d'elements*/
 function declarationExo() {
   let age = 43;
   let fullname = "Olivier WAFFO";
@@ -60,7 +71,7 @@ function declarationExo() {
   console.log(status);
 }
 
-//declarationExo();
+/*Implémentaion de la condition if statement*/
 
 function ifcondition() {
   let temperature = 25;
@@ -72,4 +83,5 @@ function ifcondition() {
     console.log("Mettre seulemnt un Tee-shirt");
   }
 }
+//declarationExo();
 //ifcondition();
