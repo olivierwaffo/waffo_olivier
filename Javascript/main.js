@@ -1,20 +1,44 @@
-const element1 = document.getElementById("bamako");
-const element2 = document.getElementById("yaounde");
-const element3 = document.getElementById("abidjan");
+document.getElementById("bamako").onclick = function () {
+  falseFunction();
+};
+document.getElementById("yaounde").onclick = function () {
+  trueFunction();
+};
+document.getElementById("abidjan").onclick = function () {
+  falseFunction();
+};
 
-element1.addEventListener("click", myFunctionRep1);
-function myFunctionRep1() {
-  document.getElementById("response").innerHTML = "Faux";
+function falseFunction() {
+  document.getElementById("responseQ1").innerHTML = "Faux";
 }
 
-element2.addEventListener("click", myFunctionRep2);
-function myFunctionRep2() {
-  document.getElementById("response").innerHTML = "Vrai";
+function trueFunction() {
+  document.getElementById("responseQ1").innerHTML = "Vrai";
 }
 
-element3.addEventListener("click", myFunctionRep3);
+/*document.getElementById("abidjan").addEventListener("click", myFunctionRep3);
 function myFunctionRep3() {
   document.getElementById("response").innerHTML = "Faux";
+}*/
+
+document.getElementById("response").onclick = validate;
+function validate() {
+  var checkboxes = document.getElementsByName("true");
+  var checkboxChecked = [];
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked && checkboxes[i].value === "true") {
+      checkboxChecked.push(checkboxes[i]);
+    } else if (checkboxes[i].checked && checkboxes[i].value === "false") {
+      checkboxChecked.length - 1;
+    }
+  }
+  console.log("taille : " + checkboxChecked.length);
+  if (checkboxChecked.length === 2) {
+    document.getElementById("responseQ2").innerHTML = "Vrai";
+  } else {
+    document.getElementById("responseQ2").innerHTML = "Faux";
+  }
 }
 
 function declarationExo() {
