@@ -13,12 +13,16 @@ document.getElementById("abidjan").onclick = function () {
 /*Affichage de la réponse en fonction du choix de radio button*/
 function falseFunction() {
   document.getElementById("respContainerQ1").style.backgroundColor = "red";
-  document.getElementById("responseQ1").innerHTML = "Faux";
+  document.getElementById("responseQ1").innerHTML = "FAUX";
+  document.getElementById("responseQ1").style.color = "white";
+  document.getElementById("responseQ1").style.fontSize = 20;
 }
 
 function trueFunction() {
   document.getElementById("respContainerQ1").style.backgroundColor = "green";
-  document.getElementById("responseQ1").innerHTML = "Vrai";
+  document.getElementById("responseQ1").innerHTML = "VRAI";
+  document.getElementById("responseQ1").style.color = "white";
+  document.getElementById("responseQ1").style.fontSize = 20;
 }
 
 /* Debut Question2
@@ -40,11 +44,15 @@ function validate() {
 
 /* cette condition affiche la réponse en fonction du  quota de checkbox atteint ou pas */
 if(checkboxChecked.length === 2){
-  document.getElementById("responseQ2").innerHTML = "Vrai";
   document.getElementById("respContainerQ2").style.backgroundColor = "green";
+  document.getElementById("responseQ2").innerHTML = "VRAI";
+  document.getElementById("responseQ2").style.color = "white";
+  document.getElementById("responseQ2").style.fontSize = 20;
 } else{
-  document.getElementById("responseQ2").innerHTML = "Faux";
   document.getElementById("respContainerQ2").style.backgroundColor = "red";
+  document.getElementById("responseQ2").innerHTML = "FAUX";
+  document.getElementById("responseQ2").style.color = "white";
+  document.getElementById("responseQ2").style.fontSize = 20;
 }
 
 }
