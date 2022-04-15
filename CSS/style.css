@@ -22,6 +22,12 @@ span.capitalize {
   border: 3px solid #3633ff;
   padding: 30px;
 }
+.div-form {
+  margin: auto;
+  width: 50%;
+  border: 3px solid #000000;
+  padding: 30px;
+}
 .main-title-center {
   margin: auto;
   display: table;
