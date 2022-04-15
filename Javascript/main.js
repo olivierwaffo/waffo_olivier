@@ -10,8 +10,22 @@ document.getElementById("abidjan").onclick = function () {
   falseFunction();
 };
 
+//document.querySelector(".form").style.visibility = "hidden";
+//document.querySelector(".qcm").style.visibility = "hidden";
+
+document.getElementById("qcm").onclick = function () {
+  document.querySelector(".div-qcm").style.visibility = "visible";
+  document.querySelector(".div-form").style.visibility = "hidden";
+};
+
+document.getElementById("form").onclick = function () {
+  document.querySelector(".div-form").style.visibility = "visible";
+  document.querySelector(".div-qcm").style.visibility = "hidden";
+};
+
 /*Affichage de la réponse en fonction du choix de radio button*/
 function falseFunction() {
+  document.querySelector(".div-qcm").classList.remove("w3-round-xlarge");
   document.getElementById("respContainerQ1").style.backgroundColor = "red";
   document.getElementById("responseQ1").innerHTML = "FAUX";
   document.getElementById("responseQ1").style.color = "white";
@@ -19,6 +33,7 @@ function falseFunction() {
 }
 
 function trueFunction() {
+  document.querySelector(".div-qcm").classList.add("w3-round-xlarge");
   document.getElementById("respContainerQ1").style.backgroundColor = "green";
   document.getElementById("responseQ1").innerHTML = "VRAI";
   document.getElementById("responseQ1").style.color = "white";
@@ -30,6 +45,7 @@ valaidate() collecte et compte l'ensemble des valeurs d'input à true et false.
 Il fait une boucle et effectue une ajout ou un retrait en fonction du checkbox à true ou à false*/
 
 document.getElementById("response").onclick = validate;
+
 function validate() {
   var checkboxes = document.getElementsByName("input");
   var checkboxChecked = [];
@@ -44,20 +60,19 @@ function validate() {
 
 /* cette condition affiche la réponse en fonction du  quota de checkbox atteint ou pas */
 if(checkboxChecked.length === 2){
+  document.querySelector(".div-qcm").classList.add("w3-round-xlarge");
   document.getElementById("respContainerQ2").style.backgroundColor = "green";
   document.getElementById("responseQ2").innerHTML = "VRAI";
   document.getElementById("responseQ2").style.color = "white";
   document.getElementById("responseQ2").style.fontSize = 20;
 } else{
+  document.querySelector(".div-qcm").classList.remove("w3-round-xlarge");
   document.getElementById("respContainerQ2").style.backgroundColor = "red";
   document.getElementById("responseQ2").innerHTML = "FAUX";
   document.getElementById("responseQ2").style.color = "white";
   document.getElementById("responseQ2").style.fontSize = 20;
 }
-
 }
-
-
 
 /*affiche les differentes déclarations d'elements*/
 function declarationExo() {
@@ -80,7 +95,6 @@ function declarationExo() {
 }
 
 /*Implémentaion de la condition if statement*/
-
 function ifcondition() {
   let temperature = 25;
   if (temperature >= 10 && temperature <= 20) {
