@@ -8,113 +8,154 @@
 
   <body>
     <div class="w3-row margin-top div-menu">
-      <div class="w3-col w3-container" style="width: 15%;"></div>
-      <div class="w3-col w3-container" style="width: 35%;">
+      <div class="w3-col w3-container" style="width: 5%;"></div>
+      <div class="w3-col w3-container w3-center" style="width: 35%;">
         <p
+          data-cy="qcm"
           id="qcm"
-          class="w3-button w3-black w3-text-white w3-center w3-round-xlarge"
+          class="w3-button w3-black w3-text-white w3-round-xlarge"
         >
           QCM CHALLENGE
         </p>
       </div>
-      <div class="w3-col w3-container" style="width: 35%;">
+      <div
+        class="w3-col w3-container w3-border w3-border-black w3-round-xlarge"
+        style="width: 20%;"
+      >
+        <div class="w3-large w3-center">SCORE</div>
+        <p data-cy="note" id="note" class="w3-large w3-center">0/2</p>
+      </div>
+
+      <div class="w3-col w3-container w3-center" style="width: 35%;">
         <p
+          data-cy="qcm"
           id="form"
-          class="w3-button w3-yellow w3-text-black w3-center w3-round-xlarge"
+          class="w3-button w3-yellow w3-text-black w3-round-xlarge"
         >
           FORM CHALLENGE
         </p>
       </div>
-      <div class="w3-col w3-container" style="width: 15%;"></div>
+      <div class="w3-col w3-container" style="width: 5%;"></div>
     </div>
-    <div class="div-qcm marg-top">
-      <div class="marg-top">
-        <span class="uppercase main-title-center">QCM CHALLENGE</span>
-        <p class="text-title">Q1: Quelle est la capitale du Cameroun ?</p>
-        <div class="w3-row">
-          <div class="w3-col w3-container" style="width: 50%;">
-            <p class="text">
-              <span>
-                <input type="radio" id="bamako" name="capitale1" value="Bamako"
-              /></span>
-              <span> Bamako</span>
-            </p>
-            <p class="text">
-              <span>
-                <input
-                  type="radio"
-                  id="yaounde"
-                  name="capitale1"
-                  value="Yaoundé"
-              /></span>
-              <span> Yaoundé</span>
-            </p>
-            <p class="text">
-              <span>
-                <input
-                  type="radio"
-                  id="abidjan"
-                  name="capitale1"
-                  value="Abidjan"
-              /></span>
-              <span> Abidjan</span>
-            </p>
-          </div>
-          <div
-            class="w3-col w3-container w3-center w3-round-large"
-            id="respContainerQ1"
-            style="width: 50%;"
-          >
-            <p class="text-title">Response</p>
-            <p id="responseQ1"></p>
-          </div>
-        </div>
-
-        <p class="text-title">
-          Q2: Quelles villes font parties d'un même pays?
-        </p>
-        <div class="w3-row">
-          <div class="w3-col w3-container" style="width: 50%;">
-            <p class="text">
-              <span><input type="checkbox" name="input" value="true" /></span>
-              <span><label for="ville1"> Douala</label></span>
-            </p>
-            <p class="text">
-              <span><input type="checkbox" name="input" value="false" /></span>
-              <span><label for="ville2"> Djamena</label></span>
-            </p>
-            <p class="text">
-              <span><input type="checkbox" name="input" value="true" /></span>
-              <span><label for="ville3"> Garoua</label></span>
-            </p>
-          </div>
-          <div
-            class="w3-col w3-container w3-center w3-round-large"
-            id="respContainerQ2"
-            style="width: 50%;"
-          >
-            <p
-              class="text-title w3-button w3-black w3-round-xlarge"
-              id="response"
-            >
-              Verifier
-            </p>
-            <p id="responseQ2"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="div-form marg-top" hidden>
-      <div class="marg-top">
-        <span class="uppercase main-title-center">FORM CHALLENGE</span>
-        <p class="text-title">
+    <div class="div-qcm marge-top">
+      <span class="uppercase main-title-center">QCM CHALLENGE</span>
+      <div id="Question_1" class="w3-row">
+        <p data-cy="Q1" class="text-title">
           Q1: Quelle est la capitale du Cameroun ?
         </p>
-
-        <p class="text-title">
+        <div class="w3-col w3-container" style="width: 50%;">
+          <p class="text">
+            <span>
+              <input type="radio" data-cy="Q1Resp_1" id="bamako" name="capitale1" value="Bamako"
+            /></span>
+            <span data-cy="bamako"> Bamako</span>
+          </p>
+          <p class="text">
+            <span>
+              <input type="radio" data-cy="Q1Resp_2" id="yaounde" name="capitale1" value="Yaoundé"
+            /></span>
+            <span data-cy="yaounde"> Yaoundé</span>
+          </p>
+          <p class="text">
+            <span>
+              <input type="radio" data-cy="Q1Resp_3"  id="abidjan" name="capitale1" value="Abidjan"
+            /></span>
+            <span data-cy="abidjan"> Abidjan</span>
+          </p>
+        </div>
+        <div
+          class="w3-col w3-container w3-center w3-round-large"
+          id="respContainerQ1"
+          style="width: 50%;"
+        >
+          <p class="text-title">Response</p>
+          <p data-cy="respQ1" id="responseQ1">xxxx</p>
+        </div>
+      </div>
+      <div id="Question_2" class="w3-row">
+        <p data-cy="Q2" class="text-title">
           Q2: Quelles villes font parties d'un même pays?
         </p>
+        <div class="w3-col w3-container" style="width: 50%;">
+          <p class="text">
+            <span><input type="checkbox" data-cy="Q2Resp_1" name="input" value="true" /></span>
+            <span><label data-cy="ville_1"> Douala</label></span>
+          </p>
+          <p class="text">
+            <span><input type="checkbox" data-cy="Q2Resp_2" name="input" value="false" /></span>
+            <span><label data-cy="ville_2"> Djamena</label></span>
+          </p>
+          <p class="text">
+            <span><input type="checkbox" data-cy="Q2Resp_3" name="input" value="true" /></span>
+            <span><label data-cy="ville_3"> Garoua</label></span>
+          </p>
+        </div>
+        <div
+          class="w3-col w3-container w3-center w3-round-large"
+          id="respContainerQ2"
+          style="width: 50%;"
+        >
+          <p
+            class="text-title w3-button w3-black w3-round-xlarge"
+          data-cy="response"  id="response"
+          >
+            Verifier
+          </p>
+          <p data-cy="respQ2" id="responseQ2">xxxx</p>
+        </div>
       </div>
+
+      <div id="Question_3" class="w3-row">
+        <p data-cy="Q3" class="text-title">
+          Q3: Quelle équipe de football est championne <br />du monde en 2018?
+        </p>
+        <div class="w3-col w3-container" style="width: 50%;">
+          <select data-cy="pays" name="pays" id="pays-select">
+            <option value="">--Sélectionner--</option>
+            <option value="france">France</option>
+            <option value="algerie">Algerie</option>
+            <option value="espagne">Espagne</option>
+            <option value="allemagne">Allemagne</option>
+            <option value="brazil">Brazil</option>
+          </select>
+        </div>
+        <div
+          class="w3-col w3-container w3-center w3-round-large"
+          id="respContainerQ3"
+          style="width: 50%;"
+        >
+        <p class="text-title">Response</p>
+        <p data-cy="respQ3" id="responseQ3">xxxx</p>
+      </div>
+        </div>
+      </div>
+    </div>
+    <div class="div-form marge-top" hidden>
+      <span class="uppercase main-title-center">FORM CHALLENGE</span>
+      <p>
+        <label id="pan_name">Enter your name</label><br />
+        <input id="name" size="35" type="text" value="" name="name" />
+      </p>
+      <p>
+        <label id="pan_firstname">Enter your firstname</label><br />
+        <input id="firstname" size="30" type="text" value="" name="firstname" />
+      </p>
+      <p>
+        <label id="pan_age">Enter your age</label><br />
+        <input id="age" size="5" type="text" value="" name="age" />
+      </p>
+      <p>
+        <label id="pan_adress">Enter your full adress</label><br />
+        <input id="adress" size="50" type="text" value="" name="adress" />
+      </p>
+      <p class="w3-center">
+        <input
+          id="valider"
+          class="w3-button w3-blue w3-round-xlarge"
+          type="submit"
+          value="Valider"
+        />
+      </p>
     </div>
     <script src="../Javascript/main.js"></script>
   </body>

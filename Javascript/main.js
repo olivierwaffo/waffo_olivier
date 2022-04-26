@@ -6,6 +6,10 @@ document.getElementById("bamako").onclick = function () {
 document.getElementById("yaounde").onclick = function () {
   trueFunction();
 };
+(document.getElementById("pays-select").value = "France"),
+  () => {
+    trueFunction();
+  };
 document.getElementById("abidjan").onclick = function () {
   falseFunction();
 };
@@ -40,20 +44,27 @@ document.getElementById("form").onclick = function () {
 };
 
 /*Affichage de la réponse en fonction du choix de radio button*/
+let score = 0;
 function falseFunction() {
   document.querySelector(".div-qcm").classList.remove("w3-round-xlarge");
+  document.querySelector(".div-qcm").style.borderWidth = "3px";
+  document.querySelector(".div-qcm").style.borderColor = "blue";
   document.getElementById("respContainerQ1").style.backgroundColor = "red";
   document.getElementById("responseQ1").innerHTML = "FAUX";
   document.getElementById("responseQ1").style.color = "white";
   document.getElementById("responseQ1").style.fontSize = 20;
+  document.getElementById("note").innerHTML = score - 1 + "/2";
 }
 
 function trueFunction() {
   document.querySelector(".div-qcm").classList.add("w3-round-xlarge");
+  document.querySelector(".div-qcm").style.borderWidth = "3px";
+  document.querySelector(".div-qcm").style.borderColor = "green";
   document.getElementById("respContainerQ1").style.backgroundColor = "green";
   document.getElementById("responseQ1").innerHTML = "VRAI";
   document.getElementById("responseQ1").style.color = "white";
   document.getElementById("responseQ1").style.fontSize = 20;
+  document.getElementById("note").innerHTML = score + 1 + "/2";
 }
 
 /* Debut Question2
@@ -77,15 +88,21 @@ function validate() {
   /* cette condition affiche la réponse en fonction du  quota de checkbox atteint ou pas */
   if (checkboxChecked.length === 2) {
     document.querySelector(".div-qcm").classList.add("w3-round-xlarge");
+    document.querySelector(".div-qcm").style.borderWidth = "3px";
+    document.querySelector(".div-qcm").style.borderColor = "green";
     document.getElementById("respContainerQ2").style.backgroundColor = "green";
     document.getElementById("responseQ2").innerHTML = "VRAI";
     document.getElementById("responseQ2").style.color = "white";
     document.getElementById("responseQ2").style.fontSize = 20;
+    document.getElementById("note").innerHTML = score + 1 + "/2";
   } else {
     document.querySelector(".div-qcm").classList.remove("w3-round-xlarge");
+    document.querySelector(".div-qcm").style.borderWidth = "3px";
+    document.querySelector(".div-qcm").style.borderColor = "blue";
     document.getElementById("respContainerQ2").style.backgroundColor = "red";
     document.getElementById("responseQ2").innerHTML = "FAUX";
     document.getElementById("responseQ2").style.color = "white";
     document.getElementById("responseQ2").style.fontSize = 20;
+    document.getElementById("note").innerHTML = score - 1 + "/2";
   }
 }
