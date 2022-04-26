@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 describe("Suite de test de demo", () => {
-  it.skip("Verifier les questions et réponses", () => {
-    cy.visit("../HTML/index.html");
+  it("Verifier les questions et réponses", () => {
+    cy.visit("/HTML/index.html");
     cy.get("[data-cy='Q1']").should(
       "contain.text",
       "Q1: Quelle est la capitale du Cameroun ?"
