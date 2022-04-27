@@ -64,7 +64,7 @@ describe("Suite de test de demo", () => {
     cy.get("[data-cy='respQ1']").should("contain.text", "VRAI");
     cy.get("[data-cy='Q2Resp_1']").check().should("be.checked");
     cy.get("[data-cy='Q2Resp_3']").check().should("be.checked");
-    cy.get("[data-cy='response']").click();
+    cy.get("[data-cy='btnResp_2']").click();
     cy.get("[data-cy='respQ2']").should("contain.text", "VRAI");
   });
 
@@ -74,7 +74,7 @@ describe("Suite de test de demo", () => {
     cy.get("[data-cy='respQ1']").should("contain.text", "FAUX");
     cy.get("[data-cy='Q2Resp_1']").check().should("be.checked");
     cy.get("[data-cy='Q2Resp_2']").check().should("be.checked");
-    cy.get("[data-cy='response']").click();
+    cy.get("[data-cy='btnResp_2']").click();
     cy.get("[data-cy='respQ2']").should("contain.text", "FAUX");
   });
 });

@@ -13,18 +13,15 @@
         <p
           data-cy="qcm"
           id="qcm"
-          class="w3-button w3-black w3-text-white w3-round-xlarge"
+          class="w3-black w3-button w3-text-white w3-round-xlarge"
         >
           QCM CHALLENGE
         </p>
       </div>
       <div
-        class="w3-col w3-container w3-border w3-border-black w3-round-xlarge"
+        class="w3-col w3-container w3-round-xlarge"
         style="width: 20%;"
-      >
-        <div class="w3-large w3-center">SCORE</div>
-        <p data-cy="note" id="note" class="w3-large w3-center">0/2</p>
-      </div>
+      ></div>
 
       <div class="w3-col w3-container w3-center" style="width: 35%;">
         <p
@@ -38,6 +35,10 @@
       <div class="w3-col w3-container" style="width: 5%;"></div>
     </div>
     <div class="div-qcm marge-top">
+      <div class="w3-center">
+        <span class="w3-large">SCORE :</span>
+        <span data-cy="note" id="note" class="w3-large w3-text-green">0/2</span>
+      </div>
       <span class="uppercase main-title-center">QCM CHALLENGE</span>
       <div id="Question_1" class="w3-row">
         <p data-cy="Q1" class="text-title">
@@ -46,19 +47,34 @@
         <div class="w3-col w3-container" style="width: 50%;">
           <p class="text">
             <span>
-              <input type="radio" data-cy="Q1Resp_1" id="bamako" name="capitale1" value="Bamako"
+              <input
+                type="radio"
+                data-cy="Q1Resp_1"
+                id="bamako"
+                name="capitale1"
+                value="Bamako"
             /></span>
             <span data-cy="bamako"> Bamako</span>
           </p>
           <p class="text">
             <span>
-              <input type="radio" data-cy="Q1Resp_2" id="yaounde" name="capitale1" value="Yaoundé"
+              <input
+                type="radio"
+                data-cy="Q1Resp_2"
+                id="yaounde"
+                name="capitale1"
+                value="Yaoundé"
             /></span>
             <span data-cy="yaounde"> Yaoundé</span>
           </p>
           <p class="text">
             <span>
-              <input type="radio" data-cy="Q1Resp_3"  id="abidjan" name="capitale1" value="Abidjan"
+              <input
+                type="radio"
+                data-cy="Q1Resp_3"
+                id="abidjan"
+                name="capitale1"
+                value="Abidjan"
             /></span>
             <span data-cy="abidjan"> Abidjan</span>
           </p>
@@ -69,7 +85,7 @@
           style="width: 50%;"
         >
           <p class="text-title">Response</p>
-          <p data-cy="respQ1" id="responseQ1">xxxx</p>
+          <p data-cy="respQ1" id="responseQ1" class="w3-text-white">.</p>
         </div>
       </div>
       <div id="Question_2" class="w3-row">
@@ -78,15 +94,33 @@
         </p>
         <div class="w3-col w3-container" style="width: 50%;">
           <p class="text">
-            <span><input type="checkbox" data-cy="Q2Resp_1" name="input" value="true" /></span>
+            <span
+              ><input
+                type="checkbox"
+                data-cy="Q2Resp_1"
+                name="input"
+                value="true"
+            /></span>
             <span><label data-cy="ville_1"> Douala</label></span>
           </p>
           <p class="text">
-            <span><input type="checkbox" data-cy="Q2Resp_2" name="input" value="false" /></span>
+            <span
+              ><input
+                type="checkbox"
+                data-cy="Q2Resp_2"
+                name="input"
+                value="false"
+            /></span>
             <span><label data-cy="ville_2"> Djamena</label></span>
           </p>
           <p class="text">
-            <span><input type="checkbox" data-cy="Q2Resp_3" name="input" value="true" /></span>
+            <span
+              ><input
+                type="checkbox"
+                data-cy="Q2Resp_3"
+                name="input"
+                value="true"
+            /></span>
             <span><label data-cy="ville_3"> Garoua</label></span>
           </p>
         </div>
@@ -97,11 +131,12 @@
         >
           <p
             class="text-title w3-button w3-black w3-round-xlarge"
-          data-cy="response"  id="response"
+            data-cy="btnResp_2"
+            id="btnResp_2"
           >
             Verifier
           </p>
-          <p data-cy="respQ2" id="responseQ2">xxxx</p>
+          <p data-cy="respQ2" id="responseQ2" class="w3-text-white">.</p>
         </div>
       </div>
 
@@ -124,33 +159,113 @@
           id="respContainerQ3"
           style="width: 50%;"
         >
-        <p class="text-title">Response</p>
-        <p data-cy="respQ3" id="responseQ3">xxxx</p>
-      </div>
+          <p
+            class="text-title w3-button w3-black w3-round-xlarge"
+            data-cy="btnResp_3"
+            id="btnResp_3"
+            onclick="Q3_Function()"
+          >
+            Verifier
+          </p>
+          <p data-cy="respQ3" id="responseQ3" class="w3-text-white">.</p>
         </div>
       </div>
     </div>
     <div class="div-form marge-top" hidden>
       <span class="uppercase main-title-center">FORM CHALLENGE</span>
+      <p
+        class="w3-center w3-round-xlarge"
+        data-cy="formAlert"
+        id="formAlert"
+      ></p>
       <p>
-        <label id="pan_name">Enter your name</label><br />
-        <input id="name" size="35" type="text" value="" name="name" />
+        <span data-cy="label_titre" id="titre">Titre : </span>
+        <select data-cy="titre" name="titre" id="form_titre">
+          <option value="Mr">Mr.</option>
+          <option value="Mme">Mme</option>
+          <option value="Mlle">Mlle</option>
+        </select>
       </p>
       <p>
-        <label id="pan_firstname">Enter your firstname</label><br />
-        <input id="firstname" size="30" type="text" value="" name="firstname" />
+        <span data-cy="label_objet" id="objet">Objet : </span>
+        <input data-cy="avis" type="radio" id="avis" name="avis" value="avis" />
+        <span class="w3-cursive">Avis</span>
+        <input
+          data-cy="reclamation"
+          type="radio"
+          id="reclamation"
+          name="reclamation"
+          value="reclamation"
+        />
+        <span data-cy="label_reclamation" class="w3-cursive">Réclamation</span>
       </p>
       <p>
-        <label id="pan_age">Enter your age</label><br />
-        <input id="age" size="5" type="text" value="" name="age" />
+        <label data-cy="label_name" id="label_name">Nom complet</label><br />
+        <input
+          data-cy="name"
+          id="name"
+          size="35"
+          type="text"
+          value=""
+          name="name"
+          required
+        />
       </p>
       <p>
-        <label id="pan_adress">Enter your full adress</label><br />
-        <input id="adress" size="50" type="text" value="" name="adress" />
+        <label data-cy="label_email" id="label_email">Email addresse</label
+        ><br />
+        <input
+          data-cy="email"
+          id="email"
+          size="30"
+          type="text"
+          value=""
+          name="email"
+          required
+        />
+      </p>
+      <p>
+        <label data-cy="label_tel" id="pan_tel">Numéro de téléphone</label
+        ><br />
+        <input
+          data-cy="tel"
+          id="tel"
+          size="15"
+          type="tel"
+          value=""
+          name="telephone"
+          required
+        />
+      </p>
+      <p>
+        <label data-cy="label_adress" id="label_adress">Address complète</label
+        ><br />
+        <input
+          data-cy="adress"
+          id="adress"
+          size="35"
+          type="text"
+          value=""
+          name="adress"
+          required
+        />
+      </p>
+      <p>
+        <label data-cy="label_msg" id="pan_msg">Message en une ligne</label
+        ><br />
+        <input
+          data-cy="msg"
+          id="msg"
+          size="50"
+          type="text"
+          value=""
+          name="msg"
+        />
       </p>
       <p class="w3-center">
         <input
           id="valider"
+          data-cy="valider"
           class="w3-button w3-blue w3-round-xlarge"
           type="submit"
           value="Valider"
