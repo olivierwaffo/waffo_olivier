@@ -5,12 +5,11 @@ let radomTel = faker.phone.phoneNumber();
 let radomEmail = faker.internet.email();
 let radomLoren = faker.lorem.paragraph();
 let radomCity = faker.address.city();
-describe("acces main page index file ", () => {
-  it("Verifier les questions et réponses", () => {
+
+describe("Suite de test QCM Challenge", () => {
+  beforeEach(() => {
     cy.visit("/HTML/index.html");
   });
-});
-describe("Suite de test QCM Challenge", () => {
   it("Verifier les questions et réponses", () => {
     cy.get("[data-cy='Q1']").should(
       "contain.text",
@@ -45,42 +44,8 @@ describe("Suite de test QCM Challenge", () => {
       "contain.text",
       "Quelle équipe de football est championne du monde en 2018?"
     );
-    cy.get("[data-cy='pays']")
-      .select("france")
-      .should("contain.text", "France");
-    cy.get("[data-cy='pays']")
-      .select("algerie")
-      .should("contain.text", "Algerie");
-    cy.get("[data-cy='pays']")
-      .select("espagne")
-      .should("contain.text", "Espagne");
-    cy.get("[data-cy='pays']")
-      .select("allemagne")
-      .should("contain.text", "Allemagne");
-    cy.get("[data-cy='pays']")
-      .select("bresil")
-      .should("contain.text", "Bresil");
-    cy.get("[data-cy='respQ3']").should("be.visible").and("contain.text", ".");
-
-    cy.get("[data-cy='pays']")
-      .select("france")
-      .should("contain.text", "France");
-    cy.get("[data-cy='pays']")
-      .select("algerie")
-      .should("contain.text", "Algerie");
-    cy.get("[data-cy='pays']")
-      .select("espagne")
-      .should("contain.text", "Espagne");
-    cy.get("[data-cy='pays']")
-      .select("allemagne")
-      .should("contain.text", "Allemagne");
-    cy.get("[data-cy='pays']")
-      .select("bresil")
-      .should("contain.text", "Bresil");
   });
-
   it("verifier les bonnes réponses aux questions", () => {
-    cy.visit("/HTML/index.html");
     cy.get("[data-cy='Q1Resp_2']").click();
     cy.get("[data-cy='respQ1']").should("contain.text", "VRAI");
     cy.get("[data-cy='Q2Resp_1']").check().should("be.checked");
@@ -95,7 +60,6 @@ describe("Suite de test QCM Challenge", () => {
   });
 
   it("verifier les mauvaises réponses aux questions", () => {
-    cy.visit("/HTML/index.html");
     cy.get("[data-cy='Q1Resp_1']").click();
     cy.get("[data-cy='respQ1']").should("contain.text", "FAUX");
     cy.get("[data-cy='Q2Resp_1']").check().should("be.checked");
